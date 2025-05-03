@@ -3,6 +3,7 @@ title_separator: "|"
 email: gmarti6@uw.edu
 description: The Network Foundation team's PTW330 portfolio project
 baseurl: "" # the subpath of your site, e.g. /blog
+url: https://gmarti-web.github.io/NetworkFoundations/
 lang: en
 local: en-US
 name: Greg Martinez
