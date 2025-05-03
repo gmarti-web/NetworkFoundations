@@ -12,7 +12,7 @@ Build the site on your local computer to see how Jekyll renders your document. L
 
 ### Install dependencies
 
-Follow the instructions for your operating system to install Jekyll and [Bundler][3].
+Follow the instructions for your operating system to install [Ruby][7], Jekyll, and [Bundler][3].
 
 <details>
 <summary>Linux, Ubuntu, or Debian</summary>
@@ -104,8 +104,6 @@ Jekyll doesn't officially support Windows. You can, though, install Jekyll with 
 To learn more about installing Jekyll on Windows, see [Jekyll on Windows][16].
 
 </details>
-
-For a complete list of installation methods, see [Installing Ruby][7].
 
 ### Install gems from `Gemfile`
 
