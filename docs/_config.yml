@@ -9,6 +9,7 @@ name: Greg Martinez
 breadcrumbs: true
 
 # Build settings
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-archives
   - jekyll-feed
