@@ -288,8 +288,8 @@ The code owner reviews the pull request. If approved, they'll merge the changes 
 [8]: http://localhost:4000
 [9]: https://snapcraft.io/
 [10]: https://vale.sh/docs/install
-[11]: https://github.com/gmarti-web/gmarti-web.github.io/issues
-[12]: https://github.com/gmarti-web/gmarti-web.github.io/issues/new?template=feature-request.yml
+[11]: https://github.com/gmarti-web/NetworkFoundations/issues
+[12]: https://github.com/gmarti-web/NetworkFoundations/issues/new
 [13]: #how-to-build-this-project-locally
 [14]: https://rubyinstaller.org/
 [15]: https://rubyinstaller.org/downloads/
