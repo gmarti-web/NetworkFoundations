@@ -5,3 +5,8 @@ layout: default
 ---
 
 This is the homepage for the Network Foundations team's PTW330 portfolio project.
+
+Site contributors:
+
+* abce
+* 123
