@@ -2,17 +2,63 @@
 
 This project hosts the Network Foundations team's PTW330 portfolio project.
 
-This project uses [Jekyll][1] and [Vale][2]. Jekyll renders all Markdown documents into static blog pages. This controls how the documents look to viewers in their browser. Vale lints these documents to keep them error-free. It checks for spelling issues, grammatical errors, over-complicated content, and more. Together, they convert the plain text documents in this repository into a vibrant, well-structured site.
+This project uses [Jekyll][4] and [Vale][5]. Jekyll renders all Markdown documents into static blog pages. This controls how the documents look to viewers in their browser. Vale lints these documents to keep them error-free. It checks for spelling issues, grammatical errors, over-complicated content, and more. Together, they convert the plain text documents in this repository into a vibrant, well-structured site.
 
 The rest of this README page describes how to build and add changes to this project on your local computer.
 
+## How to contribute to this project
+
+To contribute to the project:
+
+1. [Find an issue][6] you want to work on. If one doesn't exist, [create one][7].
+1. Check out the repository.
+
+    ```console
+    git clone https://github.com/gmarti-web/NetworkFoundations
+    ```
+1. Create a new branch that describes your work.
+
+    ```console
+    git checkout -b my-branch
+    ```
+
+1. Make your changes and lint for writing errors.
+
+    ```console
+    vale path/to/file.md
+    ```
+
+    * Lint for errors after each set of changes.
+
+1. Commit your changes. Include a descriptive commit message.
+
+    ```console
+    git add path/to/file.md
+    git commit -m 'your commit message'
+    ```
+1. Push your changes to GitHub.
+
+    ```console
+    git push -u origin my-branch
+    ```
+
+    * This command adds your changes to a new branch in GitHub.
+
+1. Create a new pull request to merge your branch into the `main` branch.
+
+The code owner reviews your request for consistency, clarity, and correctness. If approved, they merge the changes into the main branch. If not, they add their feedback to the pull request and ask you to revise it.
+
+To see how Jekyll renders your changes before you push them to GitHub, build the project locally. See the following sections to learn more.
+
 ## How to build this project locally
 
-Build the site on your local computer to see how Jekyll renders your document. Lint, or check, your document for grammatical or spelling errors before you commit it.
+Build the site on your local computer to see how Jekyll renders your document. Check, or lint, your document for grammatical or spelling errors before committing it.
 
 ### Install dependencies
 
-Follow the instructions for your operating system to install [Ruby][7], Jekyll, and [Bundler][3].
+Follow the instructions for your operating system to install [Ruby][12], Jekyll, and [Bundler][8].
+
+Bundler and Ruby manage the packages, called "gems," that Jekyll needs to render the site.
 
 <details>
 <summary>Linux, Ubuntu, or Debian</summary>
@@ -23,7 +69,7 @@ Follow the instructions for your operating system to install [Ruby][7], Jekyll, 
     sudo apt-get install ruby-full build-essential zlib1g-dev
     ```
 
-1. Add a gem installation directory for your user account to your `~/.bashrc` file.
+2. Add a gem installation directory for your user account to your `~/.bashrc` file.
 
     ```console
     echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
@@ -31,28 +77,26 @@ Follow the instructions for your operating system to install [Ruby][7], Jekyll, 
     source ~/.bashrc
     ```
 
-1. Install Jekyll and Bundler.
+3. Install Jekyll and Bundler.
 
     ```console
     gem install jekyll bundler
     ```
 
-1. Run `jekyll -v` to check the installation.
-
-To learn more about installing Jekyll on Ubuntu, see [Jekyll on Ubuntu][4].
+To learn more about installing Jekyll on Ubuntu, see [Jekyll on Ubuntu][9].
 
 </details>
 
 <details>
 <summary>macOS</summary>
 
-1. Install [HomeBrew][5].
+1. Install [HomeBrew][10].
 
     ```console
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 
-1. Install `chruby` and the latest Ruby version.
+2. Install `chruby` and the latest Ruby version.
 
     ```console
     brew install chruby ruby-install
@@ -62,7 +106,7 @@ To learn more about installing Jekyll on Ubuntu, see [Jekyll on Ubuntu][4].
     ruby-install ruby 3.4.1
     ```
 
-1. Configure your shell to use `chruby`.
+3. Configure your shell to use `chruby`.
 
     ```console
     echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" >> ~/.bash_profile
@@ -71,15 +115,13 @@ To learn more about installing Jekyll on Ubuntu, see [Jekyll on Ubuntu][4].
     source ~/.bash_profile
     ```
 
-1. Install Jekyll and Bundler.
+4. Install Jekyll and Bundler.
 
     ```console
     gem install jekyll bundler
     ```
 
-1. Run `jekyll -v` to check the installation.
-
-To learn more about installing Jekyll on macOS, see [Jekyll on macOS][6].
+To learn more about installing Jekyll on macOS, see [Jekyll on macOS][11].
 
 </details>
 
@@ -107,24 +149,23 @@ To learn more about installing Jekyll on Windows, see [Jekyll on Windows][16].
 
 ### Install gems from `Gemfile`
 
-This project's `Gemfile` lists all the gems that this project needs. You only need to install these gems the first time you build the site.
+The `Gemfile` lists all the gems that this project needs. You only need to install these gems the first time you build the site.
 
-To install the needed gems:
+To install the gems:
 
 1. In your terminal, go to the project's root folder.
 
     ```console
-    git clone https://github.com/gmarti-web/gmarti-web.github.io.git
-    cd gmarti-web.github.io.git
+    cd NetworkFoundations.git
     ```
 
 2. Set the local gem folder.
 
-    This keeps the gems you install for this project scoped to this folder.
-
     ```console
     bundle config path 'vendor/bundle' --local
     ```
+
+    * This keeps the gems you install for this project scoped to this folder.
 
 3. Install the project's required gems from the `Gemfile`.
 
@@ -136,24 +177,26 @@ This installs this project's gems to a local folder called `vendor/bundle`.
 
 ### Start the server
 
-After you install the gems, use `bundle` to start the Jekyll server:
+After you install the gems, start a local server to see your rendered changes.
+
+Use `bundle` to start the Jekyll server:
 
 ```console
 bundle exec jekyll serve
 ```
 
-To see the rendered site, go to [http://localhost:4000][8].
+To see the rendered site, go to [http://localhost:4000][13].
 
 ### Install Vale
 
-This project uses Vale to check, or lint, for any writing errors.
+This project uses Vale to check, or lint, for any writing errors. To keep content error free, lint each change before you push it to GitHub.
 
 To install Vale, use your operating system's package manager.
 
 <details>
 <summary>Linux, Ubuntu, or Debian</summary>
 
-1. For Linux and Debian, you must install the [Snapcraft][9] daemon. For Ubuntu, which has the daemon pre-installed, skip to step two.
+1. For Linux and Debian, you must install the [Snapcraft][20] daemon. For Ubuntu, which has the daemon pre-installed, skip to step two.
 
     1. For Linux, remove the `nosnap.pref` file from your native package manager's preference folder. For Debian, skip to step ii.
 
@@ -180,16 +223,22 @@ To install Vale, use your operating system's package manager.
     snap install vale
     ```
 
-1. Run `vale -v` to check the installation.
+1. Run `vale -v` to check that the installation succeeded.
 
 This installs Vale and adds it to your `$PATH` variable.
+
+To lint AsciiDoc files, install the `asciidoc` and `asciidoctor` packages, as well.
+
+```console
+gem install asciidoctor asciidoctor-pdf
+```
 
 </details>
 
 <details>
 <summary>macOS</summary>
 
-1. Install [HomeBrew][5].
+1. Install [HomeBrew][10].
 
     ```console
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -201,9 +250,15 @@ This installs Vale and adds it to your `$PATH` variable.
     brew install vale
     ```
 
-1. Run `vale -v` to check the installation.
+1. Run `vale -v` to check that the installation succeeded.
 
 This installs Vale and adds it to your `$PATH` variable.
+
+To lint AsciiDoc files, install the `asciidoc` and `asciidoctor` packages, as well.
+
+```console
+gem install asciidoc asciidoctor
+```
 
 </details>
 
@@ -223,7 +278,7 @@ This installs Vale and adds it to your `$PATH` variable.
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
         ```
 
-    1. Run `choco` to check the installation.
+    1. Run `choco` to check that the installation succeeded.
 
 1. Install Vale.
 
@@ -231,13 +286,19 @@ This installs Vale and adds it to your `$PATH` variable.
     choco install vale
     ```
 
-1. Run `vale -v` to check the installation.
+1. Run `vale -v` to check that the installation succeeded.
 
 This installs Vale and adds it to your `%PATH%` variable.
 
+To lint AsciiDoc files, install the `asciidoc` and `asciidoctor` packages, as well.
+
+```console
+gem install asciidoc asciidoctor
+```
+
 </details>
 
-To learn more about installing Vale, see [Install–Vale CLI][10].
+To learn more about installing Vale, see [Install–Vale CLI][21].
 
 After you install Vale, install the packages listed in the `.vale.ini` file:
 
@@ -248,7 +309,7 @@ vale sync
 To lint a single file, run the following command:
 
 ```console
-vale path/to/document.md
+vale path/to/document.{md,adoc}
 ```
 
 To lint all the files in a folder, run the following command:
@@ -257,41 +318,26 @@ To lint all the files in a folder, run the following command:
 vale path/to/folder/
 ```
 
-## How to contribute to this project
+The `vale` command prints any suggestions, warnings, or errors that it finds in the linted files.
 
-To contribute to the project:
-
-1. [Find an issue][11] you want to work on. If one doesn't exist, [create one][12].
-1. Check out the repository.
-1. Create a new branch that describes your work.
-
-    ```console
-    git checkout -b my-branch
-    ```
-
-1. [Build the project on your local computer][13].
-1. Make your changes, test them on your local server, and then lint for writing errors.
-1. Push your changes to a new remote branch.
-1. Create a new pull request.
-
-The code owner reviews the pull request. If approved, they'll merge the changes into the main branch. If not, they'll add their feedback to the pull request.
-
-[1]: https://jekyllrb.com/
-[2]: https://vale.sh/
-[3]: https://bundler.io/
-[4]: https://jekyllrb.com/docs/installation/ubuntu/
-[5]: http://brew.sh/
-[6]: https://jekyllrb.com/docs/installation/macos/
-[7]: https://www.ruby-lang.org/en/documentation/installation/ 
-[8]: http://localhost:4000
-[9]: https://snapcraft.io/
-[10]: https://vale.sh/docs/install
-[11]: https://github.com/gmarti-web/NetworkFoundations/issues
-[12]: https://github.com/gmarti-web/NetworkFoundations/issues/new
-[13]: #how-to-build-this-project-locally
+[1]: https://gmartiblog.com
+[2]: https://commonmark.org/help/
+[3]: https://asciidoc.org/
+[4]: https://jekyllrb.com/
+[5]: https://vale.sh/
+[6]: https://github.com/gmarti-web/NetworkFoundations/issues
+[7]: https://github.com/gmarti-web/NetworkFoundations/issues/new
+[8]: https://bundler.io/
+[9]: https://jekyllrb.com/docs/installation/ubuntu/
+[10]: http://brew.sh/
+[11]: https://jekyllrb.com/docs/installation/macos/
+[12]: https://www.ruby-lang.org/en/documentation/installation/
+[13]: http://localhost:4000
 [14]: https://rubyinstaller.org/
 [15]: https://rubyinstaller.org/downloads/
 [16]: https://jekyllrb.com/docs/installation/windows/
 [17]: https://chocolatey.org/install
 [18]: https://docs.chocolatey.org/en-us/choco/setup#non-administrative-install
 [19]: https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell?view=powershell-7.5#run-with-administrative-privileges
+[20]: https://snapcraft.io/
+[21]: https://vale.sh/docs/install
