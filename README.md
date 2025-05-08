@@ -132,14 +132,14 @@ Jekyll doesn't officially support Windows. You can, though, install Jekyll with 
 
 1. Download and install the recommended Ruby+Devkit version from [RubyInstaller downloads][15].
 
-  * Use the default options.
+    * Use the default options.
 
 1. Run the `ridk install` step from the installation wizard. From the options, choose `MSYS2 and MINGW development toolchain`.
 1. Open a new terminal and install Jekyll and Bundler.
 
-  ```console
-  gem install jekyll bundler
-  ```
+    ```console
+    gem install jekyll bundler
+    ```
 
 1. Run `jekyll -v` to check the installation.
 
